@@ -74,8 +74,8 @@ namespace GuitarApp
         private bool stringsMatch(string stringA, 
                                   string stringB)
         {
-            if (!string.IsNullOrEmpty(stringA) &&
-                !string.IsNullOrEmpty(stringB) &&
+            if (!string.IsNullOrWhiteSpace(stringA) &&
+                !string.IsNullOrWhiteSpace(stringB) &&
                 string.Compare(stringA, stringB) == 0)
             {
                 return true;
