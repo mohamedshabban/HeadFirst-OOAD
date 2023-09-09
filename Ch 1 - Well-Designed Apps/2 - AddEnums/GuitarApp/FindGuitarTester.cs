@@ -19,17 +19,17 @@ namespace GuitarApp
             List<Guitar> guitars = inventory.search(whatErinLikes);
             if (guitars.Count > 0)
             {
-                string msgSuccess = "Erin, you might like these guitars: ";
+				StringBuilder msgSuccess = new StringBuilder("Erin, you might like these guitars: ");
                 foreach (Guitar guitar in guitars)
                 {
-                    msgSuccess +=   "\nWe have a " +
+                    msgSuccess .Append(   "\nWe have a " +
                         Enumerations.GetEnumDescription(guitar.builder) + " " + guitar.model + " " +
                         Enumerations.GetEnumDescription(guitar.type) + " guitar:\n    " +
                         Enumerations.GetEnumDescription(guitar.backWood) + " back and sides,\n    " +
                         Enumerations.GetEnumDescription(guitar.topWood) + " top.\nYou can have it for only $" +
-                        guitar.price + "!\n  ----";
+                        guitar.price + "!\n  ----");
                 }
-                Console.WriteLine(msgSuccess);
+                Console.WriteLine(msgSuccess.ToString());
                 Console.ReadKey();
             }
             else
